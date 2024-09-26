@@ -10,7 +10,13 @@ export default {
       colors: {
         gray: {
           1: "#A5A3AE4D",
-        }
+          2: "#F3F4F8",
+          3: "#23272E",
+          4: "#8B909A",
+        },
+        blue: {
+          1: "#7367F0",
+        },
       },
       fontSize: {
         "13px": [
@@ -20,6 +26,9 @@ export default {
           },
         ],
    
+    },
+    width: {
+      "66": "17rem",
     },
   },
   }
