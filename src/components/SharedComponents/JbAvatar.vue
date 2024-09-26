@@ -1,7 +1,7 @@
 <template>
     <div
       :class="avatarClasses"
-      class="mr-2 relative flex justify-center items-center rounded-full font-bold text-white"
+      class=" bg-blue-1 mr-2 relative flex justify-center items-center rounded-full font-bold text-white"
     >
       {{ avatarContent }}
       <img
@@ -18,7 +18,7 @@
   <script setup lang="ts">
     import { computed, ref } from "vue"
   
-    type BgAvatarProps = {
+    type JbAvatarProps = {
       fullName: string
       imageSrc?: string
       size?: string
@@ -26,7 +26,7 @@
    
     }
   
-    const props = withDefaults(defineProps<BgAvatarProps>(), {
+    const props = withDefaults(defineProps<JbAvatarProps>(), {
       imageSrc: "",
       size: "md",
       bgColor: "black",

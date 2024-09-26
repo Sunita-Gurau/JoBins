@@ -11,12 +11,12 @@
   
     const icons: KeyValue = Icons as KeyValue
   
-    type BgIconType = {
+    type JbIconType = {
       iconName: string
       svgFill?: string
     }
   
-    const props = withDefaults(defineProps<BgIconType>(), {
+    const props = withDefaults(defineProps<JbIconType>(), {
       svgFill: "fill-gray-1",
     })
   

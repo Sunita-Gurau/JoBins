@@ -10,12 +10,12 @@
   </template>
   
   <script setup lang="ts">
-    type BgHeaderProps = {
+    type JbHeaderProps = {
       headingLevel?: string
       text?: string
     }
   
-    const props = withDefaults(defineProps<BgHeaderProps>(), {
+    const props = withDefaults(defineProps<JbHeaderProps>(), {
       headingLevel: "h6",
     })
   
