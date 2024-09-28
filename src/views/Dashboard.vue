@@ -1,8 +1,9 @@
 <template>
-<div>
+  <div>
     <h1>This is an Dashboard page</h1>
-</div>
+  </div>
 </template>
-<script setup lang="ts">
+<script setup lang="ts"></script>
+<style scoped>
 
-</script>
+</style>
