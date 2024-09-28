@@ -13,15 +13,31 @@ const router = createRouter({
       name: 'dashboard',
       component: DashBoard
     }
-,    
+    ,    
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: '/order-management',
+      name: 'orderManagement',
+      component: () => import('../views/OrderManagement.vue')
     }
+    ,    
+    {
+      path: '/add-products',
+      name: 'addProducts',
+      component: () => import('../views/AddProducts.vue')
+    }
+    ,    
+    {
+      path: '/brand',
+      name: 'brand',
+      component: () => import('../views/Brand.vue')
+    }
+    ,    
+    {
+      path: '/product-list',
+      name: 'productList',
+      component: () => import('../views/ProductList.vue')
+    }
+
   ]
 })
 
