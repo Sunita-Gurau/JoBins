@@ -9,7 +9,7 @@
       </div>
       <section class="flex-1">
         <div class="m-6 flex justify-between">
-          <JbHeader headingLevel="h2" text="Dashboard" />
+          <JbHeader headingLevel="h2" :text="currentLabel" />
           <div class="flex items-center justify-center">
             <div class="relative mr-4">
               <JbIcon iconName="NotificationBell" />
@@ -41,14 +41,38 @@ import SideNav from '../src/components/SideNav.vue';
 import JbHeader from './components/SharedComponents/JbHeader.vue';
 import JbIcon from './components/SharedComponents/JbIcon.vue';
 import JbAvatar from './components/SharedComponents/JbAvatar.vue';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const routes = ref([
+  '/dashboard',
+  '/order-management',
+  '/brand',
+  '/add-products',
+  '/product-list'
+]);
+
+const labels = ref([
+  'Dashboard',
+  'Order Management',
+  'Brand',
+  'Add Products',
+  'Product List'
+]);
 
 const isSideNavigationToggled = ref(false);
+
+const route = useRoute();
 
 const toggleSideNavigation = (isSideNavigation: boolean) => {
   isSideNavigationToggled.value = isSideNavigation;
   console.log(isSideNavigationToggled, 'isSideNavigationToggled');
 };
+
+const currentLabel = computed(() => {
+  const index = routes.value.indexOf(route.path);
+  return index !== -1 ? labels.value[index] : 'DashBoard'; 
+});
 </script>
 
 <style scoped></style>
