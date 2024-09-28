@@ -22,17 +22,22 @@
         <li v-for="menuItem in menuItems" :key="menuItem.id" :class="[
           isSideNavigationToggled ? 'flex items-center justify-center' : 'sm:justify-start flex items-center justify-center',
           route.path === menuItem.route ? 'bg-gray-2 text-black' : 'text-gray-4'
-        ]" class="relative hover:bg-gray-2  cursor-pointer px-4 h-12 active rounded-md mb-1"
+        ]" class="relative hover:bg-gray-2  cursor-pointer px-4 h-12 active rounded-md mb-1 transition-all"
         @mouseover="setHoveredItem(menuItem, true)"
         @mouseout="setHoveredItem(menuItem, false)">
           <router-link :to="menuItem.route" :class="isSideNavigationToggled ? 'flex items-center justify-center' : 'sm:justify-start flex items-center justify-center'">
             <JbIcon :iconName="menuItem.icon"   :svgFill="
                      route.path === menuItem.route  || svgFillIcon(menuItem)
-                      ? 'fill-primary'
-                      : 'fill-secondary-6'
+                      ? 'stroke-gray-3'
+                      : 'stroke-gray-4'
                   "/>
-            <span :class="isSideNavigationToggled ? 'hidden' : 'hidden sm:block'"
-              class="ml-3 font-semibold tracking-wide transition-colors text-base">
+            <span :class="[isSideNavigationToggled ? 'hidden' : 'hidden sm:block',
+            route.path === menuItem.route  || svgFillIcon(menuItem)
+                      ? 'text-gray-3'
+                      : 'text-gray-4'
+
+            ]"
+              class="ml-3 font-semibold tracking-wide text-base transition-all">
               {{ menuItem.label }}
             </span>
           </router-link>
@@ -44,13 +49,28 @@
         :class="isSideNavigationToggled ? 'hidden' : 'hidden sm:block'">
         PRODUCTS</div>
       <ul class="mt-1">
-        <li v-for="productItem in productItems" :key="productItem.id"
-          :class="isSideNavigationToggled ? 'flex items-center justify-center' : 'sm:justify-start flex items-center justify-center '"
-          class="relative hover:bg-gray-2 cursor-pointer px-4 h-12 active rounded-md mb-1">
-          <JbIcon :iconName="productItem.icon" />
-          <span :class="isSideNavigationToggled ? 'hidden' : 'hidden sm:block'"
-            class="ml-3  text-gray-3 font-semibold tracking-wide hover:text-white transition-colors text-base">
-            {{ productItem.label }}</span>
+        <li v-for="productItem in productItems" :key="productItem.id" :class="[
+          isSideNavigationToggled ? 'flex items-center justify-center' : 'sm:justify-start flex items-center justify-center',
+          route.path === productItem.route ? 'bg-gray-2 text-black' : 'text-gray-4'
+        ]" class="relative hover:bg-gray-2  cursor-pointer px-4 h-12 active rounded-md mb-1 transition-all"
+        @mouseover="setHoveredItem(productItem, true)"
+        @mouseout="setHoveredItem(productItem, false)">
+          <router-link :to="productItem.route" :class="isSideNavigationToggled ? 'flex items-center justify-center' : 'sm:justify-start flex items-center justify-center'">
+            <JbIcon :iconName="productItem.icon"   :svgFill="
+                     route.path === productItem.route  || svgFillIcon(productItem)
+                      ? 'stroke-gray-3'
+                      : 'stroke-gray-4'
+                  "/>
+            <span :class="[isSideNavigationToggled ? 'hidden' : 'hidden sm:block',
+            route.path === productItem.route  || svgFillIcon(productItem)
+                      ? 'text-gray-3'
+                      : 'text-gray-4'
+
+            ]"
+              class="ml-3 font-semibold tracking-wide text-base transition-all">
+              {{ productItem.label }}
+            </span>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -67,12 +87,12 @@ const route = useRoute();
 const isSideNavigationToggled = ref(false)
 const menuItems = ref([
   { id: 1, label: 'Dashboard', icon: 'SmartHome', route: '/dashboard' },
-  { id: 2, label: 'Order Management', icon: 'ShoppingCart', route: '/about' },
-  { id: 3, label: 'Brand', icon: 'StarBrand', route: '/about' },
+  { id: 2, label: 'Order Management', icon: 'ShoppingCart', route: '/order-management' },
+  { id: 3, label: 'Brand', icon: 'StarBrand', route: '/brand' },
 ]);
 const productItems = ref([
-  { id: 1, label: 'Add Products', icon: 'CirclePlus' },
-  { id: 2, label: 'Product List', icon: 'ProductBox' },
+  { id: 1, label: 'Add Products', icon: 'CirclePlus',route: '/add-products' },
+  { id: 2, label: 'Product List', icon: 'ProductBox', route: '/product-list' },
 ]);
 
 const emits = defineEmits<{
@@ -91,15 +111,15 @@ const openSideNavigation = () => {
 interface MenuItem {
     id: number
     label: string
-    icon: boolean
-    route: boolean
+    icon: string
+    route: string
   }
 
-const hoveredItem = ref<Set<MenuItem | string>>(new Set())
+const hoveredItem = ref<Set<MenuItem>>(new Set())
 
 
 
-const setHoveredItem = (item: MenuItem | string, value: boolean) => {
+const setHoveredItem = (item: MenuItem , value: boolean) => {
   if (value) {
     hoveredItem.value.add(item)
   } else {

@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <RouterView />
+     <div class="m-6"> <RouterView /></div>
     </section>
   </main>
 </template>
