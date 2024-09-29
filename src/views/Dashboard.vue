@@ -95,7 +95,7 @@
     <div class="w-full bg-white rounded-lg h-full lg:h-52 mt-4">
       <div class="flex flex-wrap">
         <div
-          class="w-full lg:flex-1 p-4 h-48 flex justify-between items-center"
+          class="w-full lg:flex-1 px-4 pt-6 h-48 flex justify-between items-center"
         >
           <div class="flex justify-center items-center ml-12">
             <JbAvatar size="xl" fullName="Robert Fox" />
@@ -107,7 +107,7 @@
           <div class="justify-end h-[139px] bg-gray-5 w-1 lg:flex hidden"></div>
         </div>
         <div
-          class="w-full lg:flex-1 py-6 px-4 flex justify-between items-center"
+          class="w-full lg:flex-1 pt-6 px-4 flex justify-between items-center"
         >
           <div class="w-full">
             <p class="text-13px font-medium text-gray-4">
@@ -130,7 +130,7 @@
         </div>
 
         <div
-          class="w-full lg:flex-1 py-6 px-4 flex justify-between items-center"
+          class="w-full lg:flex-1 pt-6 px-4 flex justify-between items-center"
         >
           <div class="w-9/12">
             <p class="text-13px font-medium text-gray-4 uppercase">
@@ -155,13 +155,18 @@
           </div>
         </div>
       </div>
+      <div class="">
+        <JbTab :tabs="profileTabs" />
+      </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import JbIcon from '../components/SharedComponents/JbIcon.vue';
 import JbAvatar from '../components/SharedComponents/JbAvatar.vue';
-import { ref } from 'vue';
+import JbTab from '../components/SharedComponents/JbTab.vue';
+import OrdersTable from '../components/OrdersTable.vue';
+import { ref, markRaw } from 'vue';
 
 const countryStatistics = ref([
   {
@@ -197,6 +202,21 @@ const personalInfo = ref([
   { label: 'Contact Number', value: '(201) 555-0124' },
   { label: 'Date of Birth', value: '1 Jan, 1985' },
   { label: 'Member Since', value: '3 March, 2023' },
+]);
+
+const profileTabs = ref([
+  {
+    label: 'All Orders',
+    component: markRaw(OrdersTable),
+  },
+  {
+    label: 'Completed',
+    component: markRaw(OrdersTable),
+  },
+  {
+    label: 'Cancelled',
+    component: markRaw(OrdersTable),
+  },
 ]);
 </script>
 <style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <div v-if="svgIcon" class="inline-block align-middle">
-    <span :innerHTML="svgIcon" :class="svgFill" class="bg-transition"></span>
+    <span :innerHTML="svgIcon" :class="svgFill" class="jb-transition"></span>
   </div>
 </template>
 

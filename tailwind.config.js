@@ -39,4 +39,21 @@ export default {
       },
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.jb-scrollbar::-webkit-scrollbar': {
+          width: '0.125rem',
+        },
+        '.jb-scrollbar::-webkit-scrollbar-thumb': {
+          backgroundColor: '#CACACA',
+        },
+        '.jb-scrollbar::-webkit-scrollbar-track': {
+          backgroundColor: '#EEEEEE',
+        },
+        '.jb-transition': { transition: 'all 500ms ease-in-out' },
+      });
+    },
+    require('tw-elements/dist/plugin.cjs'),
+  ],
 };

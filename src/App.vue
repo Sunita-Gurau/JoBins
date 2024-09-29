@@ -2,7 +2,7 @@
   <div>
     <main class="flex bg-gray-1">
       <div
-        class="bg-white min-h-screen transition-all"
+        class="bg-white min-h-screen jb-transition"
         :class="isSideNavigationToggled ? 'w-14' : 'sm:w-66 w-14'"
       >
         <SideNav @toggle-side-navigation="toggleSideNavigation" />
