@@ -156,7 +156,7 @@
         </div>
       </div>
       <div class="">
-        <JbTab :tabs="profileTabs" />
+        <JbTab :tabs="ordersTabs" />
       </div>
     </div>
   </div>
@@ -204,7 +204,7 @@ const personalInfo = ref([
   { label: 'Member Since', value: '3 March, 2023' },
 ]);
 
-const profileTabs = ref([
+const ordersTabs = ref([
   {
     label: 'All Orders',
     component: markRaw(OrdersTable),
