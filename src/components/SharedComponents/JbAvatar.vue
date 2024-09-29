@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="avatarClasses"
     class="bg-blue-1 mr-2 relative flex justify-center items-center rounded-full font-bold text-white"
+    :class="avatarClasses"
   >
     {{ avatarContent }}
     <img

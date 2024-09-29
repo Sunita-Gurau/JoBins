@@ -41,7 +41,7 @@
               ? 'bg-gray-2 text-black'
               : 'text-gray-4',
           ]"
-          class="relative hover:bg-gray-2 cursor-pointer px-4 h-12 active rounded-md mb-1 transition-all"
+          class="relative hover:bg-gray-2 cursor-pointer px-4 h-12 active rounded-md mb-1 jb-transition"
           @mouseover="setHoveredItem(menuItem, true)"
           @mouseout="setHoveredItem(menuItem, false)"
         >
@@ -68,7 +68,7 @@
                   ? 'text-gray-3'
                   : 'text-gray-4',
               ]"
-              class="ml-3 font-semibold tracking-wide text-base transition-all"
+              class="ml-3 font-semibold tracking-wide text-base jb-transition"
             >
               {{ menuItem.label }}
             </span>
@@ -95,7 +95,7 @@
               ? 'bg-gray-2 text-black'
               : 'text-gray-4',
           ]"
-          class="relative hover:bg-gray-2 cursor-pointer px-4 h-12 active rounded-md mb-1 transition-all"
+          class="relative hover:bg-gray-2 cursor-pointer px-4 h-12 active rounded-md mb-1 jb-transition"
           @mouseover="setHoveredItem(productItem, true)"
           @mouseout="setHoveredItem(productItem, false)"
         >
@@ -122,7 +122,7 @@
                   ? 'text-gray-3'
                   : 'text-gray-4',
               ]"
-              class="ml-3 font-semibold tracking-wide text-base transition-all"
+              class="ml-3 font-semibold tracking-wide text-base jb-transition"
             >
               {{ productItem.label }}
             </span>
