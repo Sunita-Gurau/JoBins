@@ -20,7 +20,7 @@
               </div>
             </div>
             <div class="relative">
-              <JbAvatar size="xl" fullName="Sunita Gurau" />
+              <JbAvatar size="xl" fullName="Robert Fox" />
               <div
                 class="flex items-center justify-center bg-white w-5 h-5 rounded-full absolute -bottom-[6px] right-[4px] text-center text-white text-13px"
               >
@@ -49,7 +49,7 @@ const routes = ref([
   '/order-management',
   '/brand',
   '/add-products',
-  '/product-list'
+  '/product-list',
 ]);
 
 const labels = ref([
@@ -57,7 +57,7 @@ const labels = ref([
   'Order Management',
   'Brand',
   'Add Products',
-  'Product List'
+  'Product List',
 ]);
 
 const isSideNavigationToggled = ref(false);
@@ -71,7 +71,7 @@ const toggleSideNavigation = (isSideNavigation: boolean) => {
 
 const currentLabel = computed(() => {
   const index = routes.value.indexOf(route.path);
-  return index !== -1 ? labels.value[index] : 'DashBoard'; 
+  return index !== -1 ? labels.value[index] : 'DashBoard';
 });
 </script>
 
