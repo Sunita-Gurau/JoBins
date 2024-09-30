@@ -1,7 +1,18 @@
 <template>
-  <div class="bg-red-500 w-full h-60">
-    <h1>This is order table</h1>
+  <div class="">
+    <div class="w-[200px]">
+      <JbSearchBar
+        v-model="searchClient"
+        :has-border="false"
+        placeholder="Search ..."
+      />
+    </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import JbSearchBar from './SharedComponents/JbSearchBar.vue';
+import { ref } from 'vue';
+
+const searchClient = ref<string>('');
+</script>
 <style scoped></style>
