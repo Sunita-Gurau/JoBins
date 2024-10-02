@@ -34,3 +34,6 @@ export const Profit = `
 
 export const Arrow = `
 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5 13 5-5 5 5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+export const Search = `
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.875 1.5a6.375 6.375 0 1 0 3.946 11.382l2.74 2.739a.75.75 0 0 0 1.06-1.06l-2.74-2.74A6.375 6.375 0 0 0 7.876 1.5ZM3 7.875a4.875 4.875 0 1 1 9.75 0 4.875 4.875 0 0 1-9.75 0Z" fill="#8B909A"/></g><defs><clipPath id="a"><path fill="white" d="M0 0h18v18H0z"/></clipPath></defs></svg>`;
