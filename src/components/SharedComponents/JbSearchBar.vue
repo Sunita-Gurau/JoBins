@@ -12,7 +12,7 @@
       >
         <div class="absolute right-2"><JbIcon iconName="Search" /></div>
         <input
-          class="text-black placeholder-gray-1 text-sm outline-0 w-full px-2"
+          class="text-black placeholder-gray-4 text-sm outline-0 w-full px-2"
           :class="props.hasBackgroundColor ? 'bg-gray-3' : 'bg-white'"
           :type="props.type"
           :placeholder="props.placeholder"
