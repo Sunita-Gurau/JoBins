@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-wrap lg:flex-nowrap w-full gap-4">
       <div
-        class="w-full lg:w-[35%] bg-white rounded-lg h-[199px] py-5 flex justify-between items-center px-5 2xl:px-20"
+        class="w-full lg:w-[35%] bg-white rounded-lg h-[199px] py-5 flex justify-between items-center px-5 2xl:pl-20"
       >
         <div class="flex items-center mr-5">
           <JbIcon iconName="BusinessFinance" />
@@ -92,8 +92,8 @@
         </div>
       </div>
     </div>
-    <div class="w-full bg-white rounded-lg h-full lg:h-52 mt-4">
-      <div class="flex flex-wrap">
+    <div class="w-full rounded-lg mt-4">
+      <div class="flex flex-wrap bg-white">
         <div
           class="w-full lg:flex-1 px-4 pt-6 h-48 flex justify-between items-center"
         >
@@ -155,7 +155,7 @@
           </div>
         </div>
       </div>
-      <div class="">
+      <div>
         <JbTab :tabs="ordersTabs" />
       </div>
     </div>

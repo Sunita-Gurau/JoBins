@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 /** convert the start time or the end time of that day its used to make 24hr
  * @param {string} dateString - format: 2023-12-05T18:15:00.000Z
  * @param {string} dateTimeSet - format: "start" | ""
@@ -50,3 +51,15 @@ const hasHyphenBetweenDates = (dateRangeString: string) => {
   const regex = /^(\w{3} \d{1,2}, \d{4}) - (\w{3} \d{1,2}, \d{4})$/;
   return regex.test(dateRangeString);
 };
+
+export function getDateTime(currentDateTime?: string) {
+  if (currentDateTime !== 'null') {
+    if (currentDateTime) {
+      const dateTime = new Date(currentDateTime);
+      const formattedDateTest = format(dateTime, 'MM-dd-yyyy hh:mm a');
+      return formattedDateTest;
+    }
+  } else {
+    return '';
+  }
+}

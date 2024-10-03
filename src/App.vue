@@ -1,13 +1,13 @@
 <template>
   <div>
-    <main class="flex bg-gray-1">
+    <main class="flex">
       <div
-        class="bg-white min-h-screen jb-transition"
+        class="bg-white min-h-screen h-auto jb-transition"
         :class="isSideNavigationToggled ? 'w-14' : 'sm:w-66 w-14'"
       >
         <SideNav @toggle-side-navigation="toggleSideNavigation" />
       </div>
-      <section class="flex-1">
+      <section class="flex-1 bg-gray-1 min-h-screen h-auto">
         <div class="m-6 flex justify-between">
           <JbHeader headingLevel="h2" :text="currentLabel" />
           <div class="flex items-center justify-center">
