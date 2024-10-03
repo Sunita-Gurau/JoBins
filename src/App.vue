@@ -7,7 +7,7 @@
       >
         <SideNav @toggle-side-navigation="toggleSideNavigation" />
       </div>
-      <section class="flex-1 bg-gray-1 min-h-screen h-auto">
+      <section class="flex-1 bg-gray-1 min-h-screen h-auto overflow-hidden">
         <div class="m-6 flex justify-between">
           <JbHeader headingLevel="h2" :text="currentLabel" />
           <div class="flex items-center justify-center">

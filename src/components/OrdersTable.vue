@@ -2,7 +2,7 @@
   <div>
     <div class="flex justify-between lg:flex-nowrap flex-wrap">
       <div class="flex gap-4 lg:flex-nowrap flex-wrap">
-        <div class="w-[150px]">
+        <div class="w-full sm:w-[150px]">
           <JbSelect
             v-model="status"
             name="status"
@@ -16,7 +16,7 @@
           />
         </div>
 
-        <div class="w-[200px]">
+        <div class="w-full sm:w-[200px]">
           <JbSearchBar
             v-model="searchClient"
             :has-border="false"
@@ -24,11 +24,11 @@
           />
         </div>
       </div>
-      <div class="">
+      <div class="mt-4 sm:mt-0">
         <JbRangeCalendar v-model="selectedDateRange" />
       </div>
     </div>
-    <div class="bg-white mt-2 rounded-lg">
+    <div class="bg-white mt-4 rounded-lg">
       <JbTable
         :headers="ordersTableHeaders"
         :records="filteredAndPaginatedOrders"
@@ -57,7 +57,10 @@
         </template>
         <template #cell-action="{ item }">
           <router-link
-            :to="{ name: 'viewDetail', query: { orderId: item.id } }"
+            :to="{
+              name: 'viewDetail',
+              params: { orderId: item.id },
+            }"
             class="text-[#0F60FF] cursor-pointer"
           >
             View Details
@@ -65,7 +68,7 @@
         </template>
       </JbTable>
     </div>
-    <div class="flex justify-between">
+    <div class="flex justify-between" v-if="filteredAndPaginatedOrders.length">
       <div class="text-sm flex items-center gap-2 md:mt-0 mt-2">
         <div class="mt-2">Showing</div>
         <div class="max-w-[80px]">

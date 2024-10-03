@@ -130,7 +130,7 @@
                   <div>
                     <JbIcon iconName="NoData" />
                   </div>
-                  <div class="text-sm text-gray-1 mt-4">No data found</div>
+                  <div class="text-sm text-gray-4 mt-4">No data found.</div>
                 </div>
               </slot>
             </td>
