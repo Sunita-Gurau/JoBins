@@ -6,9 +6,6 @@
         : 'flex lg:items-center lg:justify-between justify-end'
     "
   >
-    <div class="text-secondary-3 text-sm lg:block hidden">
-      Showing {{ startItem }} to {{ endItem }} of {{ totalItems }} results
-    </div>
     <div class="flex">
       <button
         :disabled="tempPage === 1"

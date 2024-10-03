@@ -43,7 +43,7 @@
                 item[header.key] === 'Completed' ||
                 item[header.key] === 'Delivered',
               'text-yellow-500': item[header.key] === 'Pending',
-              'text-blue-500': item[header.key] === 'Shipped',
+              'text-blue-500': item[header.key] === 'Cancelled',
               'text-red-500': item[header.key] === 'Cancelled',
             }"
           >
@@ -120,7 +120,7 @@ interface Order {
   order_date: string;
   shipping_address: string;
   payment_method: string;
-  status: 'Pending' | 'Shipped' | 'Delivered' | 'Cancelled' | 'Completed';
+  status: 'Pending' | 'Cancelled' | 'Delivered' | 'Cancelled' | 'Completed';
 }
 
 const searchClient = ref<string>('');
@@ -132,7 +132,7 @@ const statusOptions = ref<string[]>([
   'Completed',
   'Pending',
   'Delivered',
-  'Shipped',
+  'Cancelled',
 ]);
 const selectedDateRange = ref<DateRangeDTO>({
   start: formatISO(startOfMonth(new Date())),
@@ -147,12 +147,9 @@ const pageSizeOptions = ref<any>([
 ]);
 
 const filteredAndPaginatedOrders = computed(() => {
-  let filtered = ordersTableData.value;
-  if (status.value !== 'All') {
-    filtered = filtered.filter((order) => order.status === status.value);
-  } else {
-    filtered = ordersTableData.value;
-  }
+  let filtered = ordersTableData.value.filter(
+    (order) => order.status === 'Cancelled',
+  );
 
   // Filter by search (first name, last name, or email)
   if (searchClient.value.trim()) {

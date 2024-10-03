@@ -42,7 +42,7 @@
               'text-green-500':
                 item[header.key] === 'Completed' ||
                 item[header.key] === 'Delivered',
-              'text-yellow-500': item[header.key] === 'Pending',
+              'text-yellow-500': item[header.key] === 'Completed',
               'text-blue-500': item[header.key] === 'Shipped',
               'text-red-500': item[header.key] === 'Cancelled',
             }"
@@ -120,7 +120,7 @@ interface Order {
   order_date: string;
   shipping_address: string;
   payment_method: string;
-  status: 'Pending' | 'Shipped' | 'Delivered' | 'Cancelled' | 'Completed';
+  status: 'Completed' | 'Shipped' | 'Delivered' | 'Cancelled' | 'Completed';
 }
 
 const searchClient = ref<string>('');
@@ -130,7 +130,7 @@ const statusOptions = ref<string[]>([
   'All',
   'Cancelled',
   'Completed',
-  'Pending',
+  'Completed',
   'Delivered',
   'Shipped',
 ]);
@@ -147,12 +147,9 @@ const pageSizeOptions = ref<any>([
 ]);
 
 const filteredAndPaginatedOrders = computed(() => {
-  let filtered = ordersTableData.value;
-  if (status.value !== 'All') {
-    filtered = filtered.filter((order) => order.status === status.value);
-  } else {
-    filtered = ordersTableData.value;
-  }
+  let filtered = ordersTableData.value.filter(
+    (order) => order.status === 'Completed',
+  );
 
   // Filter by search (first name, last name, or email)
   if (searchClient.value.trim()) {

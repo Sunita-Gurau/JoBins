@@ -1,7 +1,11 @@
 <template>
-  <div class="bg-red-500 w-full h-60">
-    <h1>This is an Add Products page</h1>
+  <div
+    class="bg-white rounded-lg w-full h-[85vh] flex items-center justify-center"
+  >
+    <JbHeader headingLevel="h2" text="This is Add Products page." />
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import JbHeader from '../components/SharedComponents/JbHeader.vue';
+</script>
 <style scoped></style>

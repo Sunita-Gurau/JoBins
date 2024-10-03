@@ -129,7 +129,7 @@
                           class="mx-3"
                           @click="handleEditDropdownOption(option)"
                         >
-                          <bg-icon iconName="DropdownEditIcon" />
+                          <JbIcon iconName="DropdownEditIcon" />
                         </div>
                       </div>
                     </slot>
@@ -139,7 +139,7 @@
                   <slot name="noData">
                     <div class="flex flex-col items-center justify-center h-44">
                       <div>
-                        <bg-icon iconName="NoData" />
+                        <JbIcon iconName="NoData" />
                       </div>
                       <div class="text-sm text-gray-1 mt-4">No data found</div>
                     </div>

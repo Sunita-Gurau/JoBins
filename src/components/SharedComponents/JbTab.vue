@@ -70,6 +70,7 @@ const activeTabComponent = computed(() => {
 
 const setActiveTab = (tabLabel: string) => {
   activeTab.value = tabLabel;
+  localStorage.setItem('activeTab', activeTab.value);
 };
 
 watchEffect(() => {

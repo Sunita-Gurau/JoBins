@@ -7,8 +7,12 @@
       :class="isSideNavigationToggled ? 'hidden' : 'hidden sm:block'"
     >
       <div class="flex text-black gap-2 items-center">
-        <JbIcon iconName="JoBinsLogo" />
-        <JbHeader headingLevel="h2" text="JoBins" />
+        <router-link to="/dashboard">
+          <JbIcon iconName="JoBinsLogo" />
+        </router-link>
+        <router-link to="/dashboard">
+          <JbHeader headingLevel="h2" text="JoBins" />
+        </router-link>
 
         <div class="ml-auto" @click="toggleSideNavigation">
           <JbIcon iconName="TogglerMenu" />
