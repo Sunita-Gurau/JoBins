@@ -46,26 +46,7 @@
               <div
                 v-if="isHeaderSortable(header.sortable)"
                 class="flex flex-col"
-              >
-                <bg-icon
-                  v-if="visibilityIcon(header.key, sortOption[0])"
-                  class="rotate-180 pr-[0.35px]"
-                  iconName="SortIconActive"
-                />
-                <bg-icon
-                  v-if="!visibilityIcon(header.key, sortOption[0])"
-                  class="rotate-180 pr-[0.35px]"
-                  iconName="SortIconInactive"
-                />
-                <bg-icon
-                  v-if="visibilityIcon(header.key, sortOption[1])"
-                  iconName="SortIconActive"
-                />
-                <bg-icon
-                  v-if="!visibilityIcon(header.key, sortOption[1])"
-                  iconName="SortIconInactive"
-                />
-              </div>
+              ></div>
             </div>
           </th>
         </tr>
@@ -235,7 +216,6 @@ const props = withDefaults(defineProps<JbTableProps>(), {
 
 const tableRefId = ref<string>(uuidv4().slice(0, 5));
 const order = ref<string>('');
-const sortOption = ref<string[]>(['ASC', 'DESC', '']);
 const currentSort = ref<string>('');
 const activeSortIcon = ref<string>('');
 const positionFromTop = ref<number>(120);
@@ -313,14 +293,6 @@ const getBorderTypeClasses = computed(() => {
 
   return borderClassMap[props.borderType] || '';
 });
-
-const visibilityIcon = (key: string, sortOrder: string) => {
-  if (sortOrder === 'ASC') {
-    return key === activeSortIcon.value && order.value === 'ASC';
-  } else if (sortOrder === 'DESC') {
-    return key === activeSortIcon.value && order.value === 'DESC';
-  }
-};
 
 const sortedData = (sortedBy: string) => {
   activeSortIcon.value = sortedBy;

@@ -117,7 +117,7 @@ import { computed, ref, watch } from 'vue';
 type JbSearchBarProps = {
   hasBorder?: boolean;
   hasBackgroundColor?: boolean;
-  showDropdown: boolean;
+  showDropdown?: boolean;
   isDropdownCenterAlign?: boolean;
   modelValue?: string;
   placeholder?: string;
