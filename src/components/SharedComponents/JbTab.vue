@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex bg-white jb-scrollbar overflow-auto items-center pl-12 rounded-lg jb-transition"
+      class="flex bg-white jb-scrollbar overflow-auto items-center pl-12 rounded-br-lg rounded-bl-lg jb-transition"
       :class="tabWrapperClass"
     >
       <div v-for="(tab, index) in props.tabs" :key="index" class="group">
