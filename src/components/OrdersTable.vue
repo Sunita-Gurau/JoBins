@@ -55,8 +55,13 @@
             {{ getDateTime(item[header.key]) }}
           </p>
         </template>
-        <template #cell-action="{}">
-          <p class="text-[#0F60FF] cursor-pointer">View Details</p>
+        <template #cell-action="{ item }">
+          <router-link
+            :to="{ name: 'viewDetail', query: { orderId: item.id } }"
+            class="text-[#0F60FF] cursor-pointer"
+          >
+            View Details
+          </router-link>
         </template>
       </JbTable>
     </div>
