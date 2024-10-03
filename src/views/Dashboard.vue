@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="w-full rounded-lg mt-4">
-      <div class="flex flex-wrap bg-white">
+      <div class="flex flex-wrap bg-white rounded-t-lg">
         <div
           class="w-full lg:flex-1 px-4 pt-6 h-48 flex justify-between items-center"
         >
@@ -121,7 +121,7 @@
               <p class="font-semibold text-13px text-gray-3">
                 {{ info.label }}
               </p>
-              <p class="font-semibold text-13px text-gray-3">
+              <p class="font-semibold text-13px text-gray-3 text-start w-24">
                 {{ info.value }}
               </p>
             </div>
@@ -166,6 +166,8 @@ import JbIcon from '../components/SharedComponents/JbIcon.vue';
 import JbAvatar from '../components/SharedComponents/JbAvatar.vue';
 import JbTab from '../components/SharedComponents/JbTab.vue';
 import OrdersTable from '../components/OrdersTable.vue';
+import CompletedTable from '../components/CompletedTable.vue';
+import CancelledTable from '../components/CancelledTable.vue';
 import { ref, markRaw } from 'vue';
 
 const countryStatistics = ref([
@@ -211,11 +213,11 @@ const ordersTabs = ref([
   },
   {
     label: 'Completed',
-    component: markRaw(OrdersTable),
+    component: markRaw(CompletedTable),
   },
   {
     label: 'Cancelled',
-    component: markRaw(OrdersTable),
+    component: markRaw(CancelledTable),
   },
 ]);
 </script>
