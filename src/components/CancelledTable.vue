@@ -88,7 +88,7 @@
 
       <JbPagination
         class="pt-3"
-        :total-items="filteredAndPaginatedOrders.length"
+        :total-items="ordersTableData.length"
         :items-per-page="pageSize"
         :current-page="pageNumber"
         @handle-page-changed="handlePageNumber"
@@ -101,7 +101,7 @@ import JbSearchBar from './SharedComponents/JbSearchBar.vue';
 import { computed, onBeforeMount, ref, watch } from 'vue';
 import JbSelect from './SharedComponents/JbSelect.vue';
 import JbRangeCalendar from './SharedComponents/JbRangeCalendar.vue';
-import { convertToISODate, getDateTime } from '../utils/dateTimeUtils';
+import { getDateTime } from '../utils/dateTimeUtils';
 import { DateRangeDTO, KeyValue, TableHeader } from '../types/DataTypes';
 import JbPagination from './SharedComponents/JbPagination.vue';
 import JbTable from './SharedComponents/JbTable.vue';
