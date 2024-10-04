@@ -19,7 +19,7 @@
         v-for="(page, index) in displayedPages"
         :key="index"
         :class="{ active: tempPage === Number(page), ellipsis: page === '...' }"
-        class="pagination-btn py-0.5 px-2.5 text-sm font-bold text-gray-3 lg:block hidden"
+        class="pagination-btn py-0.5 px-2.5 text-sm font-bold text-gray-4 lg:block hidden"
         @click="handlePageChange(Number(page))"
       >
         {{ page }}
@@ -54,15 +54,6 @@ const emits = defineEmits<{
 }>();
 
 const tempPage = ref<number>(props.currentPage);
-
-const startItem = computed(() => {
-  return (tempPage.value - 1) * props.itemsPerPage + 1;
-});
-
-const endItem = computed(() => {
-  const lastItemOnPage = tempPage.value * props.itemsPerPage;
-  return Math.min(lastItemOnPage, props.totalItems);
-});
 
 const totalPages = computed(() => {
   return Math.ceil(props.totalItems / props.itemsPerPage);
@@ -145,8 +136,9 @@ const handlePageChange = (page: number) => {
 }
 
 button.active {
-  background-color: #eee;
+  background-color: #0f60ff;
   pointer-events: none;
+  color: white;
 }
 
 .ellipsis {
